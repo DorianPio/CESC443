@@ -1,0 +1,14 @@
+.parentStats {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+}
+
+.div2Stats {
+    grid-area: 1 / 1 / 2 / 6;
+}
+.div1Stats {
+    grid-area: 2 / 2 / 5 / 5;
+}

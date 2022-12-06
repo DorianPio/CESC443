@@ -1,0 +1,26 @@
+.parentAd {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+}
+
+.div1Ad {
+    grid-area: 1 / 1 / 2 / 6;
+}
+
+.div2Ad {
+    grid-area: 2 / 2 / 5 / 4;
+}
+
+.div3Ad {
+    grid-area: 3 / 4 / 4 / 6;
+}
+
+.div4Ad {
+    grid-area: 4 / 4 / 5 / 5;
+}
+.div5Ad {
+    grid-area: 2 / 2 / 6 / 6;
+}
