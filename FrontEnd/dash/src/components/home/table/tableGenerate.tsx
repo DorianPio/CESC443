@@ -23,6 +23,7 @@ export const Table: React.FC<IContainer> = ({ endpoint, team, stats }) => {
 
   const fetchAdvertisement = () => {
     makeGETRequest(endpoint).then((response) => {
+      console.log(response);
       setAdvertisements(response);
       setLoading(false);
     });
@@ -60,9 +61,9 @@ export const Table: React.FC<IContainer> = ({ endpoint, team, stats }) => {
       </div>
 
       <div style={loading ? styleLoading : {}}>
-        <div className="grid grid-cols-4 gap-4">
-          {!stats ? (
-            <div>
+        {!stats ? (
+          <div className="container my-12 mx-auto px-4 md:px-12">
+            <div className="flex flex-line">
               {advertisements.map((card: any, index: any) => {
                 return (
                   <Card
@@ -77,8 +78,10 @@ export const Table: React.FC<IContainer> = ({ endpoint, team, stats }) => {
                 );
               })}
             </div>
-          ) : (
-            <div>
+          </div>
+        ) : (
+          <div className="container my-12 mx-auto px-4 md:px-12">
+            <div className="flex flex-wrap -mx-1 lg:-mx-4">
               {advertisements.map((card: any, index: any) => {
                 return (
                   <CardStats
@@ -89,12 +92,13 @@ export const Table: React.FC<IContainer> = ({ endpoint, team, stats }) => {
                     picture_Url={card.picture_Url}
                     team_id={card.team_id}
                     team={team}
+                    id_thing={card.id_thing}
                   />
                 );
               })}
             </div>
-          )}
-        </div>
+          </div>
+        )}
       </div>
     </>
   );

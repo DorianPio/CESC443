@@ -8,6 +8,7 @@ interface IContainer {
   team_id: String;
   team: boolean;
   id: string;
+  id_thing: string;
 }
 
 export const CardStats: React.FC<IContainer> = ({
@@ -17,6 +18,7 @@ export const CardStats: React.FC<IContainer> = ({
   team_id,
   team,
   id,
+  id_thing,
 }) => {
   const fetchTeamName = async () => {
     // await makeGETRequest("/teams?id=" + team_id).then((response) => {
@@ -28,9 +30,7 @@ export const CardStats: React.FC<IContainer> = ({
   });
 
   const test = (e: any) => {
-    window.location.href =
-      `/stats?id=${id}&name=${name}&description=${description}&picture_Url=${picture_Url}&team_id=${team_id}&team=` +
-      team;
+    window.location.href = `/stats?id=${id}&name=${name}&description=${description}&picture_Url=${picture_Url}&team_id=${team_id}&team=${team}&id_thing=${id_thing}`;
   };
 
   const deleteProperties = async () => {
@@ -45,7 +45,7 @@ export const CardStats: React.FC<IContainer> = ({
   };
 
   return (
-    <>
+    <div className="my-1 px-1 w-full md:w-1/2 lg:my-4 lg:px-4 lg:w-1/2">
       <div className="max-w-sm rounded overflow-hidden shadow-lg">
         <button onClick={test}>
           <img
@@ -83,6 +83,6 @@ export const CardStats: React.FC<IContainer> = ({
           </span>
         </div>
       </div>
-    </>
+    </div>
   );
 };

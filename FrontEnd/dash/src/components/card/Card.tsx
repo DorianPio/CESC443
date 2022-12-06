@@ -42,7 +42,7 @@ export const Card: React.FC<IContainer> = ({
   };
 
   return (
-    <>
+    <div className="my-1 px-1 w-full md:w-1/2 lg:my-4 lg:px-4 lg:w-1/2">
       <div className="max-w-sm rounded overflow-hidden shadow-lg">
         <button onClick={test}>
           <img
@@ -85,6 +85,6 @@ export const Card: React.FC<IContainer> = ({
           </span>
         </div>
       </div>
-    </>
+    </div>
   );
 };

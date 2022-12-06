@@ -44,7 +44,7 @@ export const TeamComponent = () => {
           <div className="div1 other-content">
             <NavBarComponent />
           </div>
-          <div className="div2 bg-gray-800 pt-9 pb-9 h-full">
+          <div className="div2 bg-gray-800 pt-9 pb-9">
             <Cards
               endpoint={teamId}
               title="Nombres de membres"

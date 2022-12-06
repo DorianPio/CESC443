@@ -24,7 +24,7 @@ export const Properties = () => {
         <div className="div1 other-content">
           <NavBarComponent />
         </div>
-        <div className="div2 bg-gray-800 pt-9 pb-9 h-full">
+        <div className="div2 bg-gray-800 pt-9 pb-9">
           {endpoint.length > 0 ? (
             <Cards
               endpoint={endpoint}

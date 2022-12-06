@@ -53,3 +53,12 @@ export const methodContentProperties = {
   DELETE: PropertiesValidatorRequestParameters.DELETEValidatorRequestParameters,
   POST: PropertiesValidatorRequestParameters.POSTValidatorRequestParameters,
 };
+
+import { StatsValidatorRequestParameters } from "../stats/callerValidator";
+export const methodContentStats = {
+  GET: StatsValidatorRequestParameters.GETValidatorRequestParameters,
+  PATCH: StatsValidatorRequestParameters.PATCHValidatorRequestParameters,
+  PUT: StatsValidatorRequestParameters.PUTValidatorRequestParameters,
+  DELETE: StatsValidatorRequestParameters.DELETEValidatorRequestParameters,
+  POST: StatsValidatorRequestParameters.POSTValidatorRequestParameters,
+};

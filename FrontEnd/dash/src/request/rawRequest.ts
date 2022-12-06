@@ -1,7 +1,7 @@
 import axios from "axios";
 import { checkFakeToken } from "./checkFakeToken";
 
-const baseUrl: string = "http://localhost:3000/api";
+export const baseUrl: string = "http://localhost:3000/api";
 
 const makeRAWRequest = async (
   endpoint: string,

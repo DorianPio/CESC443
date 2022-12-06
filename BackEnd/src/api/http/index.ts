@@ -7,4 +7,5 @@ export const apiRoutes = (): void => {
   serviceInterfaces.advertisementInterface.advertisementRoutes();
   serviceInterfaces.VirtualInterface.VirtualRoutes();
   serviceInterfaces.PropertiesInterface.PropertiesRoutes();
+  serviceInterfaces.StatsInterface.StatsRoutes();
 };

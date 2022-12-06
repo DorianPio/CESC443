@@ -9,6 +9,7 @@ import { AdDetails } from "./components/adPage/AdDetail";
 import { Properties } from "./components/properties/Properties";
 import { Stats } from "./components/stats/Stats";
 import { ErrorComponent } from "./components/error/ErrorComponent";
+import { Test } from "./components/test/Test";
 export const returnToSomewhere = (route: string) => {
   window.location.href = route;
   return;
@@ -57,6 +58,7 @@ const App = () => {
           <Route path="/detailsAds" element={<AdDetails />} />
           <Route path="/properties" element={<Properties />} />
           <Route path="/stats" element={<Stats />} />
+          <Route path="/test" element={<Test />} />
           <Route path="*" element={<ErrorComponent />} />
         </Routes>
       )}

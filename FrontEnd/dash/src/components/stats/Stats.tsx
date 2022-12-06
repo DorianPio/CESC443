@@ -1,10 +1,27 @@
+import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
+import { baseUrl, makeGETRequest } from "../../request/rawRequest";
 import "./Stats.css";
 
 export const Stats = () => {
   const locationL = useLocation();
   const params = new URLSearchParams(locationL.search);
+  const [stats, setStats] = useState<Number>(0);
+  const [link, setViewLink] = useState<Boolean>(false);
 
+  const fetchStats = async (id: string) => {
+    await makeGETRequest(
+      "/stats?id=" + id + "&type=" + localStorage.getItem("type")
+    ).then((response) => {
+      setStats(response.stats);
+    });
+  };
+
+  useEffect(() => {
+    fetchStats(String(params.get("id_thing")));
+  }, []);
+
+  console.log(stats);
   return (
     <div style={{ height: "100vh" }} className="parentStats">
       <div className="div2Stats bg-gray-200 py-4 px-8 mb-40">
@@ -43,6 +60,27 @@ export const Stats = () => {
             description: {params.get("description")}
           </div>
         </div>
+        <div className="text-center">Stats: {String(stats)}</div>
+
+        {localStorage.getItem("type") !== "advertiser" ? (
+          <div className="flex flex-col">
+            <div className="text-center">
+              <button
+                onClick={(e) => {
+                  setViewLink(!link);
+                }}
+                className="bg-blue-400 px-5 py-1.5 rounded text-white"
+              >
+                Get link
+              </button>
+              {link ? (
+                <div>
+                  {baseUrl + "/advertisement?id=" + params.get("id_thing")}
+                </div>
+              ) : null}
+            </div>
+          </div>
+        ) : null}
       </div>
     </div>
   );
